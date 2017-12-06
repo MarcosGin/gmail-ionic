@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="red">
+    <ion-title>{{ correoActual.reason }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<h2>{{ correoActual.reason }}</h2>
+<hr>
+  <ion-item>
+    <ion-avatar item-left>
+      <img [src]="'../../assets/imgs/' + correoActual.name.charAt(0) + '.png'">
+    </ion-avatar>
+    <h2>{{ correoActual.name }}</h2>
+    <h3>{{ correoActual.date }}</h3>
+  </ion-item>
+<p [innerHTML]="correoActual.message"></p>
+<hr>
+<ion-row>
+  <ion-col col-4>
+    <button ion-button clear (click)="showModal('Reply')">
+      <div>
+        <ion-icon name="undo"></ion-icon>
+        <br>
+        <label>Reply</label>
+      </div>
+    </button>
+  </ion-col>
+  <ion-col col-4>
+    <button ion-button clear  (click)="showModal('Reply All')">
+      <div>
+        <ion-icon name="undo"></ion-icon>
+        <ion-icon name="undo"></ion-icon>
+        <br>
+        <label> Reply All</label>
+      </div>
+    </button>
+  </ion-col>
+  <ion-col col-4>
+    <button ion-button clear  (click)="showModal('Forward')">
+      <div>
+        <ion-icon name="undo"></ion-icon>
+        <br>
+        <label> Forward</label>
+      </div>
+    </button>
+  </ion-col>  
+</ion-row>
+</ion-content>

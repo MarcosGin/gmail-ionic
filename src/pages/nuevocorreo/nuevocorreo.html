@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>{{ type }}</ion-title>
+    <ion-buttons left>
+      <button ion-button (click)="close()" clear>
+        <ion-icon name="md-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button (click)="send()" clear>
+        <ion-icon name="md-send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>De: {{ from }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Para:</ion-label>   
+      <ion-input type="email" [(ngModel)]="to"></ion-input>         
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Asunto" type="text" [(ngModel)]="reason"></ion-input>
+    </ion-item>    
+  </ion-list>
+  <ion-textarea rows="10" placeholder="Contenido.. " type="text" [(ngModel)]="message"></ion-textarea>  
+</ion-content>
